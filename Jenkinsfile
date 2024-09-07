@@ -27,6 +27,8 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the React app
+                // first clean the build directory and then build the project
+                bat 'npm run clean'
                 bat 'npm run build'
             }
         }
@@ -36,6 +38,7 @@ pipeline {
                 // Deploy or copy build files to your server
                 // Example for copying to a static server directory
                 bat 'xcopy /s /i /y build\\* D:\\react-jenkins\\jenkins-builds'
+                bat 'npx serve -s build -l 3000'
             }
         }
         
