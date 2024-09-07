@@ -4,13 +4,13 @@ pipeline {
 
     stages {
         stage('Prepare Environment') {
-            environment {
-                NODE_VERSION = '18.17.1' // specify Node.js version
-            }
+            // environment {
+            //     NODE_VERSION = '18.17.1' // specify Node.js version
+            // }
 
-            tools {
-                nodejs "NodeJS ${NODE_VERSION}"
-            }
+            // tools {
+            //     nodejs "NodeJS ${NODE_VERSION}"
+            // }
 
             steps {
                 // Pull code from your Git repository
