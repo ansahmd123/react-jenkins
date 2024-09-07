@@ -27,8 +27,6 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the React app
-                // first clean the build directory and then build the project
-                bat 'npm run clean'
                 bat 'npm run build'
             }
         }
