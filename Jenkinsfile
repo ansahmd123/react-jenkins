@@ -43,12 +43,12 @@ pipeline {
             }
         }
 
-    }
-
-    post {
-        always {
-            // Clean up workspace after pipeline execution
-            cleanWs()
+        stage('Post-Build Actions') {
+            steps {
+                // Clean up workspace after pipeline execution
+                cleanWs()
+            }
         }
+
     }
 }
