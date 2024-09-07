@@ -10,12 +10,12 @@ pipeline {
     }
 
     stages {
-        stage('Prepare Environment') {
-            steps {
-                // Pull code from your Git repository
-                checkout scm
-            }
-        }
+        // stage('Prepare Environment') {
+        //     steps {
+        //         // Pull code from your Git repository
+        //         checkout scm
+        //     }
+        // }
 
         stage('Install Dependencies') {
             steps {
