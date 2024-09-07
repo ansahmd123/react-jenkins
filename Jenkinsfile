@@ -10,10 +10,10 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
+        stage('Prepare Environment') {
             steps {
                 // Pull code from your Git repository
-                git branch: 'master', url: 'https://github.com/ansahmd123/react-jenkins'
+                checkout scm
             }
         }
 
