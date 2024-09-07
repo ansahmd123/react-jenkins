@@ -1,28 +1,29 @@
 pipeline {
     agent any
 
-    environment {
-        NODE_VERSION = '18.17.1' // specify Node.js version
-    }
-
-    tools {
-        nodejs "NodeJS ${NODE_VERSION}"
-    }
 
     stages {
-        // stage('Prepare Environment') {
-        //     steps {
-        //         // Pull code from your Git repository
-        //         checkout scm
-        //     }
-        // }
+        stage('Prepare Environment') {
+            environment {
+                NODE_VERSION = '18.17.1' // specify Node.js version
+            }
 
-        stage('Install Dependencies') {
+            tools {
+                nodejs "NodeJS ${NODE_VERSION}"
+            }
+
             steps {
-                // Install npm dependencies
-                bat 'npm install'
+                // Pull code from your Git repository
+                checkout scm
             }
         }
+
+        // stage('Install Dependencies') {
+        //     steps {
+        //         // Install npm dependencies
+        //         bat 'npm install'
+        //     }
+        // }
 
         stage('Build') {
             steps {
