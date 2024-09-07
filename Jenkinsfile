@@ -18,12 +18,12 @@ pipeline {
             }
         }
 
-        // stage('Install Dependencies') {
-        //     steps {
-        //         // Install npm dependencies
-        //         bat 'npm install'
-        //     }
-        // }
+        stage('Install Dependencies') {
+            steps {
+                // Install npm dependencies
+                bat 'npm install'
+            }
+        }
 
         stage('Build') {
             steps {
