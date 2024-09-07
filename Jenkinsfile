@@ -20,20 +20,20 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 // Install npm dependencies
-                powershell 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Build') {
             steps {
                 // Build the React app
-                powershell 'npm run build'
+                bat 'npm run build'
             }
         }
 
         stage('Test') {
             steps {
-                powershell 'npm test -- --watchAll=false'
+                bat 'npm test -- --watchAll=false'
             }
         }
 
@@ -41,7 +41,7 @@ pipeline {
             steps {
                 // Deploy or copy build files to your server
                 // Example for copying to a static server directory
-                powershell 'cp -r build/* /var/www/html/'
+                bat 'cp -r build/* /var/www/html/'
             }
         }
         
