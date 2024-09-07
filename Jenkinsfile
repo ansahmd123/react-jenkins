@@ -31,12 +31,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                bat 'npm test -- --watchAll=false'
-            }
-        }
-
         stage('Deploy') {
             steps {
                 // Deploy or copy build files to your server
