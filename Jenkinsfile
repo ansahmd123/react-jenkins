@@ -35,6 +35,7 @@ pipeline {
             steps {
                 // Deploy or copy build files to your server
                 // Example for copying to a static server directory
+                bat 'rmdir /s /q D:\\react-jenkins\\jenkins-builds'
                 bat 'xcopy /s /i /y build\\* D:\\react-jenkins\\jenkins-builds'
             }
         }
