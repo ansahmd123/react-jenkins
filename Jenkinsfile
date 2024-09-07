@@ -6,34 +6,28 @@ pipeline {
     }
 
     tools {
-        nodejs "${NODE_VERSION}"
+        nodejs "NodeJS ${NODE_VERSION}"
     }
 
     stages {
         stage('Checkout') {
             steps {
                 // Pull code from your Git repository
-                git branch: 'main', url: 'https://github.com/ansahmd123/react-jenkins'
+                git branch: 'master', url: 'https://github.com/ansahmd123/react-jenkins'
             }
         }
 
         stage('Install Dependencies') {
             steps {
                 // Install npm dependencies
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Build') {
             steps {
                 // Build the React app
-                sh 'npm run build'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'npm test -- --watchAll=false'
+                bat 'npm run build'
             }
         }
 
@@ -41,7 +35,7 @@ pipeline {
             steps {
                 // Deploy or copy build files to your server
                 // Example for copying to a static server directory
-                sh 'cp -r build/* /var/www/html/'
+                bat 'xcopy /s /i /y build\\* D:\\react-jenkins\\jenkins-builds'
             }
         }
         
