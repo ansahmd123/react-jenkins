@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Pull code from your Git repository
-                git branch: 'main', url: 'https://github.com/ansahmd123/react-jenkins'
+                git branch: 'master', url: 'https://github.com/ansahmd123/react-jenkins'
             }
         }
 
