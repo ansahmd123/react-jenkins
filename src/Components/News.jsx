@@ -39,7 +39,7 @@ const News = (props) => {
             setloading(false);
         }
         fetchData();
-    }, []);
+    }, [props.country, props.category, props.pageSize]);
 
 
     // useEffect(async () => {
