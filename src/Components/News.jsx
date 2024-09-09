@@ -30,7 +30,8 @@ const News = (props) => {
 
     useEffect(() => {
         async function fetchData() {
-            const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=0fc50964b8164f3d80afba62569bf713&page=1&pageSize=${props.pageSize}`;
+            // const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=0fc50964b8164f3d80afba62569bf713&page=1&pageSize=${props.pageSize}`;
+            const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=0fc50964b8164f3d80afba62569bf713`
             setloading(true);
             let data = await fetch(url);
             let parsedData = await data.json();
@@ -53,7 +54,7 @@ const News = (props) => {
     // }, [])
 
 
-    console.log("render");
+    // console.log("render");
     return (
         <>
             <InfiniteScroll
